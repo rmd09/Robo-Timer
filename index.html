@@ -14,9 +14,34 @@
         <div class="timer">
             <h3 class="title">Таймер</h3>
             <h1 class="time">25:43:22</h1>
-            <button class="start-button">Старт</button>
+            <button id="start-button" class="start-button">Старт</button>
         </div>
-        <button class="start-button settings-button">Настройки</button>
+        <button id="settings-button" class="start-button settings-button">Настройки</button>
+    </div>
+
+    <div class="blur"></div>
+    <div class="popup">
+        <form action="" class="popup-form">
+            <h3 class="title">Таймер</h3>
+            <div class="popup-form__inputs">
+                <div class="popup-form__input-container">
+                    <input type="number" placeholder="1" class="popup-form__input">
+                    <h6 class="popup-form__h6">ч.</h6>
+                </div>
+                <div class="popup-form__input-container">
+                    <input type="number" placeholder="0" class="popup-form__input">
+                    <h6 class="popup-form__h6">м.</h6>
+                </div>
+                <div class="popup-form__input-container">
+                    <input type="number" placeholder="0" class="popup-form__input">
+                    <h6 class="popup-form__h6">с.</h6>
+                </div>
+            </div>
+           <button type="submit" class="start-button settings-button submit-button">Сохранить</button>
+        </form>
+        <svg class="popup-close" width="48" height="48" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.11 2.697L2.698 4.11 6.586 8l-3.89 3.89 1.415 1.413L8 9.414l3.89 3.89 1.413-1.415L9.414 8l3.89-3.89-1.415-1.413L8 6.586l-3.89-3.89z" fill="#000"></path>
+        </svg>
     </div>
 
     <script src="script.js"></script>
