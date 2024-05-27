@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "B612 Mono";
+    src: url(fonts/B612Mono-Regular.ttf);
+}
+*{
+    font-family: "B612 Mono", monospace;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background-image: url("img/back.png");
+    background-size: cover;
+    background-repeat: no-repeat; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back {
+    width: calc(100vw - 120px);
+    height: calc((100vw - 120px) * 0.5653184565);
+    background-image: url("img/back.png");
+    background-size: contain;
+    background-repeat: no-repeat; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* background-color: blue; */
+    margin-top: calc((100vw - 120px) * 0.5653184565 * 0.2752);
+    gap: calc((100vw - 120px) * 0.5653184565 * 0.0222);
+    /* position: absolute;
+    left: calc((100vw - 120px) * 0.462);
+    top: calc((100vw - 120px) * 0.5653184565 * 0.2682); */
+}
+.title {
+    font-size: calc(calc((100vw - 120px) * 0.5653184565) * 0.0449247985);
+    color: #097CBF;
+}
+.time {
+    font-size: calc(calc((100vw - 120px) * 0.5653184565) * 0.0548299015);
+    color: #00374C;
+}
+.start-button {
+    background: rgb(245,183,63);
+    background: linear-gradient(90deg, rgba(245,183,63,1) 0%, rgba(241,145,33,1) 100%);
+    font-size: calc(calc((100vw - 120px) * 0.5653184565) * 0.0269247985);
+    width: calc((100vw - 120px) * 0.5653184565 * 0.2112);
+    margin: auto;
+    padding: calc((100vw - 120px) * 0.5653184565 * 0.0024) 0;
+    border-radius: calc((100vw - 120px) * 0.5653184565 * 0.0112);
+    border: none;
+    box-sizing: content-box;
+    transition: background ease-in-out 0s 200s;
+    transition: all ease-in-out 200ms;
+}
+.settings-button{
+    font-size: calc(calc((100vw - 120px) * 0.5653184565) * 0.0369247985);
+    padding: calc((100vw - 120px) * 0.5653184565 * 0.0042) calc((100vw - 120px) * 0.5653184565 * 0.0262);
+}
+.start-button:hover{
+    cursor: pointer;
+    transform: scale(1.043) translateY(calc((100vw - 120px) * 0.5653184565 * 0.0042 * (-1)));
+    -webkit-box-shadow: 0px 5px 53px 2px rgba(34, 60, 80, 0.28);
+    -moz-box-shadow: 0px 5px 53px 2px rgba(34, 60, 80, 0.28);
+    box-shadow: 0px 5px 53px 2px rgba(34, 60, 80, 0.28);
+}
+.start-button:active{
+    background: rgb(242, 194, 100);
+    background: linear-gradient(90deg, rgb(242, 194, 100) 0%, rgb(242, 194, 100) 100%); 
+    transition: 0s;
+    transform: none;
+    cursor: auto;
+}
