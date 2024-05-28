@@ -33,9 +33,11 @@ body{
     /* background-image: url("img/back.png");
     background-size: cover;
     background-repeat: no-repeat; */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 .back {
@@ -179,7 +181,25 @@ body{
     transition: all ease-in-out 200ms;
 }
 .popup-close:hover{
-    transform: rotate(90deg);
+    transform: rotate(180deg);
     cursor: pointer;
     background: linear-gradient(90deg, rgba(245,183,63,1) 0%, rgba(241,145,33,1) 100%);
+}
+
+.footer {
+    position: absolute;
+    right: calc(5% / 2);
+    top: calc((100vw - 120px) * 0.01);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 95%;
+    box-sizing: border-box;
+}
+.footer img {
+    height: calc((100vw - 120px) * 0.017);
+}
+
+#robologo {
+    transform: translateY(calc((100vw - 120px) * 0.001));
 }
