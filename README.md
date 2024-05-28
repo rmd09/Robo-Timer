@@ -1,5 +1,5 @@
 # Robo Timer
-Таймер для турнира [Робостеп](https://mosrobotics.ru/activity/robostep/)
+Это современный таймер для турнира [Робостеп](https://mosrobotics.ru/activity/robostep/)
 <br>
 <br>
 ![робостеп лого](docs/Робостеп%20лого%20NEW%202023-01.jpg)
