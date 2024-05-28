@@ -79,13 +79,14 @@ form.onsubmit = (e) => {
     e.preventDefault();
 
     defaultTimeValue = inputHours.value * 3600 + inputMinutes.value * 60 + inputSeconds.value * 1;
+    localStorage.setItem("time", `${defaultTimeValue}`);
 
     closePopup();
 }
 
 startButtom.onclick = () => {
     startButtom.disabled = true;
-    setTimeout(() => {startButtom.disabled = false;}, 1000);
+    setTimeout(() => {startButtom.disabled = false;}, 100);
 
     if (isWork) {
         stopTimer()
@@ -98,11 +99,12 @@ const startTimer = () => {
     isWork = true;
     startButtom.innerText = "Стоп";
     settingsButton.disabled = true;
-    let temp = defaultTimeValue;
+    var tempTime = defaultTimeValue - 1;
+    displayMainTime(tempTime);
     intervalId = setInterval(() => {
-        temp--;
-        displayMainTime(temp);
-        if (temp < 1) {
+        tempTime--;
+        displayMainTime(tempTime);
+        if (tempTime < 1) {
             setTimeout(() => {
                  alert("Время вышло!");
                  stopTimer();
@@ -117,3 +119,12 @@ const stopTimer = () => {
     clearInterval(intervalId);
     displayMainTime(defaultTimeValue);
 }
+
+const init = () => {
+    const time = localStorage.getItem("time");
+    if (time) {
+        defaultTimeValue = time;
+        displayMainTime(defaultTimeValue)
+    }
+}
+init();
