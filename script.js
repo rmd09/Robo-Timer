@@ -57,6 +57,9 @@ inputHours.onchange = () => {
         inputHours.value = 0;
     }
 }
+inputHours.onclick = () => {
+    inputHours.value = "";
+}
 inputMinutes.onchange = () => {
     if (inputMinutes.value > 59) {
         inputMinutes.value = 59;
@@ -64,12 +67,18 @@ inputMinutes.onchange = () => {
         inputMinutes.value = 0;
     }
 }
+inputMinutes.onclick = () => {
+    inputMinutes.value = "";
+}
 inputSeconds.onchange = () => {
     if (inputSeconds.value > 59) {
         inputSeconds.value = 59;
     } else if (inputSeconds.value < 0) {
         inputSeconds.value = 0;
     }
+}
+inputSeconds.onclick = () => {
+    inputSeconds.value = "";
 }
 
 
