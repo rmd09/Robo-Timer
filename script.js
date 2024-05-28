@@ -14,8 +14,6 @@ var isWork = false;
 var intervalId;
 
 settingsButton.onclick = () => {
-    settingsButton.disabled = true;
-    setTimeout(() => {settingsButton.disabled = false;}, 400);
     openPopup();
 }
 popupCloser.onclick = () => {
