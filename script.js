@@ -15,6 +15,7 @@ const closerDiv = document.getElementById("closer-div");
 var defaultTimeValue = 3600;
 var isWork = false;
 var intervalId;
+var timestartbuttonId;
 
 settingsButton.onclick = () => {
     openPopup();
@@ -96,7 +97,7 @@ form.onsubmit = (e) => {
 
 startButtom.onclick = () => {
     startButtom.disabled = true;
-    setTimeout(() => {startButtom.disabled = false;}, 100);
+    timestartbuttonId = setTimeout(() => {startButtom.disabled = false;}, 100);
 
     if (isWork) {
         stopTimer()
@@ -110,14 +111,26 @@ const startTimer = () => {
     startButtom.innerText = "Стоп";
     settingsButton.disabled = true;
     var tempTime = defaultTimeValue - 1;
+    if (tempTime < 0) {
+        clearTimeout(timestartbuttonId);
+        endTimer();
+        startAnimation();
+        return;
+    }
     displayMainTime(tempTime);
+    if (tempTime === 0) {
+        clearTimeout(timestartbuttonId);
+        endTimer();
+        startAnimation();
+        return;
+    }
     intervalId = setInterval(() => {
         tempTime--;
         displayMainTime(tempTime);
         if (tempTime < 1) {
             setTimeout(() => {
-                startAnimation();
                 endTimer();
+                startAnimation();
             }, 100);
         }
     }, 1000)
