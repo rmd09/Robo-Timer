@@ -8,6 +8,9 @@ const inputSeconds = document.getElementById("input-seconds");
 const popupCloser = document.getElementById("popup-closer");
 const form = document.getElementById("form");
 const timeContainer = document.getElementById("time");
+const firstR2d2 = document.getElementById("first-r2d2");
+const timeisoff = document.getElementById("timeisoff");
+const closerDiv = document.getElementById("closer-div");
 
 var defaultTimeValue = 3600;
 var isWork = false;
@@ -113,25 +116,65 @@ const startTimer = () => {
         displayMainTime(tempTime);
         if (tempTime < 1) {
             setTimeout(() => {
-                 alert("Время вышло!");
-                 stopTimer();
+                startAnimation();
+                endTimer();
             }, 100);
         }
     }, 1000)
 }
-const stopTimer = () => {
+function stopTimer() {
     isWork = false;
     startButtom.innerText = "Старт";
     settingsButton.disabled = false;
     clearInterval(intervalId);
     displayMainTime(defaultTimeValue);
 }
+function endTimer() {
+    isWork = false;
+    startButtom.innerText = "Старт";
+    settingsButton.disabled = false;
+    clearInterval(intervalId);
+    
+    startButtom.disabled = true;
+    settingsButton.disabled = true;
+}
 
 const init = () => {
     const time = localStorage.getItem("time");
     if (time) {
         defaultTimeValue = time;
-        displayMainTime(defaultTimeValue)
+        displayMainTime(defaultTimeValue);
     }
 }
 init();
+
+
+function startAnimation() {
+    const audio1 = new Audio("mp3/first.mp3");
+    const audio2 = new Audio("mp3/second.mp3");
+    if (audio1) {
+        audio1.play();
+        firstR2d2.className = "first-r2d2";
+        setTimeout(() => {
+            firstR2d2.className = "none";
+            audio1.pause();
+            audio1.currentTime = 0;
+
+            if (audio2) {
+                audio2.play();
+                timeisoff.className = "timeisoff";
+                setTimeout(() => {
+                    closerDiv.className = "closer-div";
+                }, 1000)
+            }
+        }, 4000);
+    }
+}
+
+closerDiv.onclick = () => {
+    closerDiv.className = "none";
+    timeisoff.className = "none";
+    startButtom.disabled = false;
+    settingsButton.disabled = false;
+    displayMainTime(defaultTimeValue);
+}

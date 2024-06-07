@@ -203,3 +203,44 @@ body{
 #robologo {
     transform: translateY(calc((100vw - 120px) * 0.001));
 }
+
+.first-r2d2 {
+    width: calc((100vw - 120px) * 0.425);
+    position: fixed;
+    right: calc((100vw - 120px) * 0.425 * (-1));
+    animation-name: first-r2d2;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+}
+@keyframes first-r2d2 {
+    from {
+        right: calc((100vw - 120px) * 0.425 * (-1));
+    }
+    to {
+        right: calc(100vw + calc((100vw - 120px) * 0.425));
+    }
+}
+.timeisoff {
+    position: fixed;
+    width: calc((100vw - 120px) * 0.625);
+    animation-name: timeisoff;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes timeisoff {
+    from {
+        transform: scale(0.5) translateY(calc((100vw - 120px) * 0.125 * (-1)));
+        opacity: 0.7;
+    }
+    to {
+        transform: none;
+    }
+}
+.closer-div {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+}
