@@ -41,6 +41,7 @@ body{
 }
 
 .back {
+    margin-top: 1vw;
     width: calc(100vw - 120px);
     height: calc((100vw - 120px) * 0.5653184565);
     background-image: url("img/back.png");
@@ -81,7 +82,7 @@ body{
     border: none;
     box-sizing: content-box;
     transition: background ease-in-out 0s 200s;
-    transition: all ease-in-out 200ms;
+    transition: all ease-in-out 150ms;
 }
 .settings-button{
     font-size: calc(calc((100vw - 120px) * 0.5653184565) * 0.0369247985);
@@ -109,6 +110,16 @@ body{
     opacity: 0.7;
     background: rgb(245,183,63);
     background: linear-gradient(90deg, rgba(245,183,63,1) 0%, rgba(241,145,33,1) 100%);
+}
+
+.add__time__buttons {
+    position: fixed;
+    top: 1.7vw;
+    height: 3vw;
+}
+.add__time__button {
+    width: 9vw;
+    z-index: 3;
 }
 
 .blur {
@@ -192,6 +203,7 @@ body{
     justify-content: space-between;
     width: 95%;
     box-sizing: border-box;
+    z-index: -1;
 }
 .footer img {
     height: calc((100vw - 120px) * 0.017);

@@ -11,6 +11,12 @@ const timeContainer = document.getElementById("time");
 const firstR2d2 = document.getElementById("first-r2d2");
 const timeisoff = document.getElementById("timeisoff");
 const closerDiv = document.getElementById("closer-div");
+const addTime30s = document.getElementById("add__time__30s");
+const addTime1m = document.getElementById("add__time__1m");
+const addTime5m = document.getElementById("add__time__5m");
+const addTime15m = document.getElementById("add__time__15m");
+const addTime30m = document.getElementById("add__time__30m");
+const addTime1h = document.getElementById("add__time__1h");
 
 var defaultTimeValue = 3600;
 var tempTimeValue;
@@ -18,6 +24,50 @@ var isWork = false;
 var intervalId;
 var timestartbuttonId;
 var hasTimerStoped = false;
+
+const disableAddTimeButtons = () => {
+    addTime30s.disabled = true;
+    addTime1m.disabled = true;
+    addTime5m.disabled = true;
+    addTime15m.disabled = true;
+    addTime30m.disabled = true;
+    addTime1h.disabled = true;
+}
+const enableAddButtons = () => {
+    addTime30s.disabled = false;
+    addTime1m.disabled = false;
+    addTime5m.disabled = false;
+    addTime15m.disabled = false;
+    addTime30m.disabled = false;
+    addTime1h.disabled = false;
+}
+
+disableAddTimeButtons();
+
+addTime30s.onclick = () => {
+    tempTimeValue += 30;
+    displayMainTime(tempTimeValue);
+}
+addTime1m.onclick = () => {
+    tempTimeValue += 60;
+    displayMainTime(tempTimeValue);
+}
+addTime5m.onclick = () => {
+    tempTimeValue += 300;
+    displayMainTime(tempTimeValue);
+}
+addTime15m.onclick = () => {
+    tempTimeValue += 60*15;
+    displayMainTime(tempTimeValue);
+}
+addTime30m.onclick = () => {
+    tempTimeValue += 60*30;
+    displayMainTime(tempTimeValue);
+}
+addTime1h.onclick = () => {
+    tempTimeValue += 60*60;
+    displayMainTime(tempTimeValue);
+}
 
 settingsButton.onclick = () => {
     if (hasTimerStoped) {
@@ -118,6 +168,7 @@ const startTimer = () => {
     isWork = true;
     startButtom.innerText = "Стоп";
     settingsButton.disabled = true;
+    enableAddButtons();
     
     tempTimeValue = hasTimerStoped ? tempTimeValue - 1 : defaultTimeValue - 1;
 
@@ -146,6 +197,7 @@ const startTimer = () => {
     }, 1000)
 }
 function stopTimer() {
+    disableAddTimeButtons();
     isWork = false;
     startButtom.innerText = "Старт";
     settingsButton.innerText = "Сбросить";
@@ -154,6 +206,7 @@ function stopTimer() {
     clearInterval(intervalId);
 }
 function endTimer() {
+    disableAddTimeButtons();
     isWork = false;
     startButtom.innerText = "Старт";
     settingsButton.innerText = "Настройки";
