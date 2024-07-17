@@ -178,12 +178,9 @@ body{
     margin-top: calc((100vw - 120px) * 0.01);
     padding: calc((100vw - 120px) * 0.01);
     border-radius: calc((100vw - 120px));
-    transition: all ease-in-out 200ms;
 }
 .popup-close:hover{
-    transform: rotate(180deg);
     cursor: pointer;
-    background: linear-gradient(90deg, rgba(245,183,63,1) 0%, rgba(241,145,33,1) 100%);
 }
 
 .footer {

@@ -13,12 +13,20 @@ const timeisoff = document.getElementById("timeisoff");
 const closerDiv = document.getElementById("closer-div");
 
 var defaultTimeValue = 3600;
+var tempTimeValue;
 var isWork = false;
 var intervalId;
 var timestartbuttonId;
+var hasTimerStoped = false;
 
 settingsButton.onclick = () => {
-    openPopup();
+    if (hasTimerStoped) {
+        hasTimerStoped = false;
+        displayMainTime(defaultTimeValue);
+        settingsButton.innerText = "Настройки";
+    } else {
+        openPopup();
+    }
 }
 popupCloser.onclick = () => {
     closePopup();
@@ -110,24 +118,26 @@ const startTimer = () => {
     isWork = true;
     startButtom.innerText = "Стоп";
     settingsButton.disabled = true;
-    var tempTime = defaultTimeValue - 1;
-    if (tempTime < 0) {
+    
+    tempTimeValue = hasTimerStoped ? tempTimeValue - 1 : defaultTimeValue - 1;
+
+    if (tempTimeValue < 0) {
         clearTimeout(timestartbuttonId);
         endTimer();
         startAnimation();
         return;
     }
-    displayMainTime(tempTime);
-    if (tempTime === 0) {
+    displayMainTime(tempTimeValue);
+    if (tempTimeValue === 0) {
         clearTimeout(timestartbuttonId);
         endTimer();
         startAnimation();
         return;
     }
     intervalId = setInterval(() => {
-        tempTime--;
-        displayMainTime(tempTime);
-        if (tempTime < 1) {
+        tempTimeValue--;
+        displayMainTime(tempTimeValue);
+        if (tempTimeValue < 1) {
             setTimeout(() => {
                 endTimer();
                 startAnimation();
@@ -138,13 +148,16 @@ const startTimer = () => {
 function stopTimer() {
     isWork = false;
     startButtom.innerText = "Старт";
+    settingsButton.innerText = "Сбросить";
+    hasTimerStoped = true;
     settingsButton.disabled = false;
     clearInterval(intervalId);
-    displayMainTime(defaultTimeValue);
 }
 function endTimer() {
     isWork = false;
     startButtom.innerText = "Старт";
+    settingsButton.innerText = "Настройки";
+    hasTimerStoped = false;
     settingsButton.disabled = false;
     clearInterval(intervalId);
     
