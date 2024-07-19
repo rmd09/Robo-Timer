@@ -34,11 +34,10 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
 }
 
 .back {
-    margin-top: 1vw;
+    margin-top: 3vw;
     width: calc(100vw - 120px);
     height: calc((100vw - 120px) * 0.5653184565);
     background-image: url("img/back.png");
@@ -116,7 +115,7 @@ body{
 }
 .add__time__button {
     width: 9vw;
-    z-index: 3;
+    z-index: 1;
 }
 
 .blur {
@@ -126,6 +125,7 @@ body{
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     overflow: hidden;
+    z-index: 2;
 }
 .popup{
     position: absolute;
@@ -343,7 +343,7 @@ body{
     .add__time__button {
         font-size: 5vw;
         width: 50vw;
-        z-index: 3;
+        z-index: 0;
     }
     
     .blur {
