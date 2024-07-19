@@ -21,6 +21,4 @@
 <img width="90.65%" src="./docs/d3.png">
 
 ## Мобильная версия
-<img width="30%" src="./docs/m1.jpg">
-<img width="30%" src="./docs/m2.jpg">
-<img width="30%" src="./docs/m3.jpg">
+<img width="30%" src="./docs/m1.jpg"> <img width="30%" src="./docs/m2.jpg"> <img width="30%" src="./docs/m3.jpg">
