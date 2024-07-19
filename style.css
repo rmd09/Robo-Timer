@@ -112,10 +112,10 @@ body{
     position: absolute;
     top: 1.7vw;
     height: 3vw;
+    z-index: 1;
 }
 .add__time__button {
     width: 9vw;
-    z-index: 1;
 }
 
 .blur {
@@ -200,7 +200,7 @@ body{
     justify-content: space-between;
     width: 95%;
     box-sizing: border-box;
-    z-index: -1;
+    z-index: 0;
 }
 .footer img {
     height: calc((100vw - 120px) * 0.017);
