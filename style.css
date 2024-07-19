@@ -30,9 +30,6 @@ input[type=number] {
 }
 
 body{
-    /* background-image: url("img/back.png");
-    background-size: cover;
-    background-repeat: no-repeat; */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -113,7 +110,7 @@ body{
 }
 
 .add__time__buttons {
-    position: fixed;
+    position: absolute;
     top: 1.7vw;
     height: 3vw;
 }
@@ -252,4 +249,241 @@ body{
     width: 100vw;
     height: 100vh;
     z-index: 3;
+}
+
+.mobile__logo {
+    display: none;
+}
+
+@media screen and (orientation: portrait) and (max-width: 500px) {
+    body {
+        justify-content: flex-start;
+    }
+
+    .mobile__logo {
+        display: block !important;
+        width: 78vw;
+        margin-top: 10vw;
+    }
+    .back {
+        width: 95vw;
+        height: 95vw;
+        background: url(./img/back-mobile.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    .timer {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 32vw;
+        gap: 2.7vw;
+    }
+    .title {
+        font-size: 7vw;
+        color: #097CBF;
+    }
+    .time {
+        font-size: 8.5vw;
+        color: #00374C;
+    }
+    .start-button {
+        background: rgb(245,183,63);
+        background: linear-gradient(90deg, rgba(245,183,63,1) 0%, rgba(241,145,33,1) 100%);
+        font-size: 5vw;
+        width: 15vw;
+        margin: auto;
+        padding: 0 3vw;
+        border-radius: 2vw;
+        border: none;
+        box-sizing: content-box;
+        transition: background ease-in-out 0s 200s;
+        transition: all ease-in-out 150ms;
+    }
+    .settings-button{
+        font-size: 6vw;
+        width: 35vw;
+        padding: 0.2vw 3vw;
+        margin-top: 30vw;
+    }
+    .start-button:hover{
+        cursor: pointer;
+        transform: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    .start-button:active{
+        background: rgb(242, 194, 100);
+        background: linear-gradient(90deg, rgb(242, 194, 100) 0%, rgb(242, 194, 100) 100%); 
+        transition: 0s;
+        transform: none;
+        cursor: auto;
+    }
+    .start-button:disabled{
+        cursor: auto;
+        transform: none;
+        box-shadow: none;
+        color: #000;
+        opacity: 0.7;
+        background: rgb(245,183,63);
+        background: linear-gradient(90deg, rgba(245,183,63,1) 0%, rgba(241,145,33,1) 100%);
+    }
+    
+    .add__time__buttons {
+        display: flex;
+        flex-wrap: wrap;
+
+        position: fixed;
+        top: 140vw;
+        height: 3vw;
+        row-gap: 4vw;
+    }
+    .add__time__button {
+        font-size: 5vw;
+        width: 50vw;
+        z-index: 3;
+    }
+    
+    .blur {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+    }
+    .popup{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .popup-form {
+        background-color: #F0F0F0;
+        width: 60vw;
+        height: 70vw;
+        border-radius: calc((100vw - 120px) * 0.045);
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: calc((100vw - 120px) * 0.043);
+        padding-top: calc((100vw - 120px) * 0.02);
+    }
+    .popup-form__inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        gap: calc((100vw - 120px) * 0.048);
+    }
+    .popup-form__input-container {
+        display: flex;
+        gap: calc((100vw - 120px) * 0.006);
+    }
+    .popup-form__input {
+        width: 20vw;
+        background-color: #F0F0F0;
+        border: none;
+        border-bottom: rgba(241,145,33,1) solid 1px;
+        transition: all ease-out 100ms;
+        font-size: 6vw;
+        text-align: center;
+    }
+    .popup-form__input:focus{
+        outline: none;
+        border-bottom: rgba(241,145,33,1) solid 2px;
+    }
+    .popup-form__h6 {
+        font-size: 6vw;
+    }
+    .submit-button {
+        margin: 0;
+        margin-top: 6vw;
+    }
+    .popup-close {
+        height: 5vw;
+        width: 5vw;
+        background: rgb(245,183,63);
+        background: linear-gradient(90deg, rgba(245,183,63,1) 0%, rgba(241,145,33,1) 100%);
+        margin-top: 3vw;
+        padding: 2.2vw;
+        border-radius: 100%;
+    }
+    
+    .footer {
+        position: absolute;
+        top: 94.5vh;
+        right: calc(5% / 2);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        width: 95%;
+        box-sizing: border-box;
+        z-index: 1;
+        height: 5vw;
+    }
+    .footer img {
+        height: 5vw;
+    }
+    
+    #robologo {
+        display: none;
+    }
+    
+    .first-r2d2 {
+        width: 55vw;
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        right: calc((100vw - 120px) * 0.425 * (-1));
+        animation-name: first-r2d2;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0s;
+        animation-duration: 4s;
+        animation-iteration-count: 1;
+    }
+    @keyframes first-r2d2 {
+        from {
+            right: -50vw;
+        }
+        to {
+            right: calc(100vw + calc((100vw - 120px) * 0.425));
+        }
+    }
+    .timeisoff {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 80vw;
+        animation-name: timeisoff;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes timeisoff {
+        from {
+            transform: scale(0.5) translateY(-70%);
+            opacity: 0.7;
+        }
+        to {
+            transform: translateY(-50%);
+        }
+    }
+    .closer-div {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 3;
+    }
+    
+    .mobile__logo {
+        display: none;
+    }
+    
 }
