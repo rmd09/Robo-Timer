@@ -420,7 +420,7 @@ body{
     
     .footer {
         position: absolute;
-        top: 92vh;
+        top: 95vh;
         right: calc(5% / 2);
         display: flex;
         align-items: flex-end;
