@@ -277,7 +277,7 @@ body{
         display: flex;
         flex-direction: column;
         text-align: center;
-        margin-top: 32vw;
+        margin-top: 32.5vw;
         gap: 2.7vw;
     }
     .title {
@@ -304,7 +304,7 @@ body{
     .settings-button{
         font-size: 6vw;
         width: 35vw;
-        padding: 0.2vw 3vw;
+        padding: 0.6vw 4vw;
         margin-top: 30vw;
     }
     .start-button:hover{
@@ -335,8 +335,8 @@ body{
         display: flex;
         flex-wrap: wrap;
 
-        position: fixed;
-        top: 140vw;
+        position: absolute;
+        top: 136vw;
         height: 3vw;
         row-gap: 4vw;
     }
@@ -364,11 +364,12 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 4vw;
     }
     .popup-form {
         background-color: #F0F0F0;
         width: 60vw;
-        height: 70vw;
+        height: 65vw;
         border-radius: calc((100vw - 120px) * 0.045);
     
         display: flex;
@@ -419,7 +420,7 @@ body{
     
     .footer {
         position: absolute;
-        top: 94.5vh;
+        top: 92vh;
         right: calc(5% / 2);
         display: flex;
         align-items: flex-end;
